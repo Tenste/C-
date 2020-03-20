@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() {
+	float media, soma = 0.0;
+	int i, notas;
+	
+	printf("Deseja fazer a media de quantas notas? ");
+	scanf("%d", &notas);
+	
+	float vetor[notas];
+
+	for (i = 0; i < notas; i++){
+		printf("Digite o valor %d: ", i+1);
+		scanf("%f", &vetor[1]);
+		soma = soma + vetor[1];
+	}
+	
+	media = soma / notas;
+	printf("A media e %.1lf", media);
+	
+	return 0;
+}
+
