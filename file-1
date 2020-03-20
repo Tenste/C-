@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+/* run this program using the console pauser or add your own gestem("pause") or input loop */
+
+int main() {
+	float A, B, C, delta, X1, X2, Xv, Yv;
+	int resp;
+
+	do{
+		printf("Digite o valor de A: ");
+		scanf("%f", &A);
+		printf("Digite o valor de B: ");
+		scanf("%f", &B);
+		printf("Digite o valor de C: ");
+		scanf("%f", &C);
+		printf("------------------------------------------------------- \n");
+		printf("sua funcao e %.0lfx^2 %.0lfx %.0lf = 0 \n", A, B, C);
+		printf("------------------------------------------------------- \n");
+		
+		delta = ((B * B) - 4 * A * C);
+		X1 = ((- B + sqrt(delta)) / (2 * A));
+		X2 = ((- B - sqrt(delta)) / (2 * A));
+		Xv = ((- B) / (2 * A));
+		Yv = (- (delta) / (4 * A));
+		
+		printf("O valor de delta e: %.1lf \n", delta);
+		printf("------------------------------------------------------- \n");
+		printf("O valor da raiz de delta e: %.1lf \n", sqrt(delta));
+		printf("------------------------------------------------------- \n");
+		
+		if (delta < 0){
+			printf("A equacao nao possui resultados reais \n");
+		}else{
+			printf("A equacao possui dois resultados distintos reais \n");
+		}if(delta == 0){
+			printf("A equacao possui apenas um resultado real ou possui dois resultados iguais \n");
+		}
+		printf("------------------------------------------------------- \n");
+		if(A > 0){
+			printf("A concavidade da figura sera voltada para cima \n");
+		}
+		if(A < 0){
+			printf("A concavidade da figura sera voltada para baixo \n");
+		}
+		
+		printf("------------------------------------------------------- \n");
+		printf("Os pontos de coordenadas A = (%.1lf , 0) e B = (%.1lf , 0) \n", X1, X2);
+		printf("------------------------------------------------------- \n");
+		printf("Seus vertices sao: (%.1lf , %.1lf) \n", Xv, Yv);
+		printf("------------------------------------------------------- \n");
+		
+		printf("Digite 1 para executar novamente ou 0 para sair \n");
+		scanf("%d", &resp);
+		printf("------------------------------------------------------- \n");
+		
+	}while(resp == 1);
+	
+	return 0;
+}
