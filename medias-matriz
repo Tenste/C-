@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+    int m[10][3], i, j;
+    float mediaAluno = 0;
+    
+    printf("Programa para tirar a média de 3 notas de 10 alunos\n\n");
+
+    for(i = 0; i < 10; i++){
+        for(j = 0; j < 3; j++){
+            printf("Informe a nota %dº do aluno %d: ", j+1, i+1);
+            scanf("%d", &m[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Pressione qualquer tecla para mostrar as médias\n\n");
+	system("pause");
+    for(i = 0; i < 10; i++){
+           mediaAluno = (m[i][0] + m[i][1] + m[i][2]);
+           printf("A média do aluno %d é: %f \n", i+1, mediaAluno/3);
+    }
+
+	return 0;		
+
+}
